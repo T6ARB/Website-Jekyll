@@ -1,0 +1,58 @@
+<header>
+    <div class="container">
+        <div class="header-content">
+            {% if page.layout == 'home' %}
+                <div></div>
+                <a href="{{ '/blog.html' | relative_url }}" class="blog-link" aria-label="Go to Blog Page">
+                    <i class="fas fa-blog"></i> Blog
+                </a>
+            {% elsif page.layout == 'blog' %}
+                <a href="{{ '/' | relative_url }}" class="home-link" aria-label="Go to Home Page">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <div></div>
+            {% else %}
+                <div>
+                    <a href="{{ '/' | relative_url }}" class="nav-link" aria-label="Go to Home Page">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="{{ '/blog.html' | relative_url }}" class="nav-link" aria-label="Go to Blog Page">
+                        <i class="fas fa-blog"></i> Blog
+                    </a>
+                </div>
+                <div></div>
+            {% endif %}
+        </div>
+        
+        {% if page.layout == 'home' %}
+            <h1>Hi, I'm <span>Isaac</span><span class="waving-emoji" role="img" aria-label="Waving hand">👋</span></h1>
+            <p class="subtitle">{{ site.description }}</p>
+            <div class="social-links">
+                <a href="https://github.com/{{ site.github_username }}" target="_blank" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:{{ site.email }}" aria-label="Send an Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://t.me/{{ site.telegram_username }}" target="_blank" aria-label="Telegram Profile">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+        {% elsif page.layout == 'blog' %}
+            <h1>Isaac's <span>Blog</span><i class="fas fa-blog icon"></i></h1>
+            <p class="subtitle">Thoughts, tutorials, and insights about web development, Linux, and programming.</p>
+        {% elsif page.layout == 'post' %}
+            <h1><span>{{ page.title }}</span></h1>
+            <div class="post-meta">
+                <div class="date" role="contentinfo">
+                    <i class="far fa-calendar-alt" aria-hidden="true"></i> 
+                    {{ page.date | date: "%B %d, %Y" }}
+                </div>
+                <div class="author" role="contentinfo">
+                    <i class="far fa-user" aria-hidden="true"></i> 
+                    {{ page.author | default: site.author | default: "Isaac" }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</header>
