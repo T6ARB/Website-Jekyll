@@ -4,11 +4,18 @@ layout: default
 
 <section id="blog-content">
     <div class="container">
+        {% if site.posts.size == 0 %}
+        <div class="no-posts">
+            <p>لا توجد منشورات حالياً.</p>
+        </div>
+        {% else %}
         <div class="blog-posts">
             {% for post in site.posts %}
             <article class="blog-post">
                 <header class="blog-post-header">
-                    <h2 class="blog-post-title">{{ post.title }}</h2>
+                    <h2 class="blog-post-title">
+                        <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: inherit;">{{ post.title }}</a>
+                    </h2>
                     <time datetime="{{ post.date | date: '%Y-%m-%d' }}" class="blog-post-date">
                         {{ post.date | date: "%B %d, %Y" }}
                     </time>
@@ -26,5 +33,6 @@ layout: default
             </article>
             {% endfor %}
         </div>
+        {% endif %}
     </div>
 </section>
