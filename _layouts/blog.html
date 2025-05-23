@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<section id="blog-content">
+    <div class="container">
+        <div class="blog-posts">
+            {% for post in site.posts %}
+            <article class="blog-post">
+                <header class="blog-post-header">
+                    <h2 class="blog-post-title">{{ post.title }}</h2>
+                    <time datetime="{{ post.date | date: '%Y-%m-%d' }}" class="blog-post-date">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </time>
+                </header>
+                <p class="blog-post-excerpt">
+                    {% if post.excerpt %}
+                        {{ post.excerpt | strip_html | truncate: 200 }}
+                    {% else %}
+                        {{ post.content | strip_html | truncate: 200 }}
+                    {% endif %}
+                </p>
+                <a href="{{ post.url | relative_url }}" class="read-more" aria-label="Read more about {{ post.title }}">
+                    {% if post.lang == 'ar' %}قراءة المزيد{% else %}Read More{% endif %}
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
