@@ -4,6 +4,7 @@ gem "jekyll", "~> 4.3.0"
 gem "minima"
 gem "jekyll-feed", "~> 0.12"
 gem "jekyll-sitemap"
+gem "jekyll-paginate"
 gem "jekyll-seo-tag"
 gem "webrick", "~> 1.7"
 
