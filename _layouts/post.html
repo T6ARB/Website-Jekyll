@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<section id="post-content">
+    <div class="container">
+        {% if page.image %}
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="post-image" loading="lazy">
+        {% endif %}
+        
+        <div class="post-content">
+            {{ content }}
+            
+            {% if page.downloads %}
+            <div class="download-buttons">
+                {% for download in page.downloads %}
+                <a href="{{ download.url }}" class="download-button{% if download.type %} {{ download.type }}{% endif %}" aria-label="{{ download.aria_label }}">
+                    <i class="{{ download.icon }}" aria-hidden="true"></i> {{ download.text }}
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <a href="{{ '/blog.html' | relative_url }}" class="back-link" aria-label="Back to Blog">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i> 
+                {% if page.lang == 'ar' %}العودة إلى المدونة{% else %}Back to Blog{% endif %}
+            </a>
+        </div>
+    </div>
+</section>
