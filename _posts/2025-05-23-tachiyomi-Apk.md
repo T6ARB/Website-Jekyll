@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "تشاتشيومي: أفضل تطبيق لقراءة المانجا على الأندرويد"
-date: 2025-05-23
+date: 2025-05-23 12:00:00 +0300
 author: Isaac
 lang: ar
 image: /assets/images/tachiyomi-cover.jpg
+excerpt: "Tachiyomi هو أفضل تطبيق مجاني ومفتوح المصدر لقراءة المانجا على الأندرويد. يوفر تجربة قراءة ممتازة مع مميزات متقدمة."
 downloads:
   - text: "تحميل Tachiyomi v0.15.3"
     url: "https://github.com/ZhanZiyuan/tachiyomi/releases/download/v0.15.3/tachiyomi-v0.15.3.apk"
