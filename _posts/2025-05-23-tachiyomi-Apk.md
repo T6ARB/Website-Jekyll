@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "تشاتشيومي: أفضل تطبيق لقراءة المانجا على الأندرويد"
-date: 2025-01-20
+date: 2025-05-23
 author: Isaac
 lang: ar
 image: /assets/images/tachiyomi-cover.jpg
