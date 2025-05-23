@@ -1,0 +1,59 @@
+/* CSS Variables */
+:root {
+    --color-dark-bg: #040405;
+    --color-darker-bg: #111319;
+    --color-text-light: #fff;
+    --color-text-gray: #a0aec0;
+    --color-heading-light: #d3e3f3;
+    --color-accent-yellow: #f3bc2b;
+    --color-accent-cyan: #00d4ff;
+    --color-button-bg: #2d3748;
+    --color-button-hover: #3a4a61;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --padding-container-v: 32px;
+    --padding-container-h: 16px;
+    --font-size-base: 0.9375rem;
+    --line-height-base: 1.6;
+}
+
+/* Global Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Arial', sans-serif;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    line-height: var(--line-height-base);
+    overflow-x: hidden;
+    direction: ltr;
+    position: relative;
+}
+
+/* Background Noise Effect */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Container */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--padding-container-v) var(--padding-container-h);
+    position: relative;
+    z-index: 1;
+}
